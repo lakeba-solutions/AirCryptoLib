@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devteamlakeba/AirCryptoLib.git"
+    "url": "git+https://github.com/lakeba-solutions/AirCryptoLib.git"
   },
   "keywords": [
     "Top-up",
@@ -18,9 +18,9 @@
   "author": "Lakeba-solutions",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devteamlakeba/AirCryptoLib/issues"
+    "url": "https://github.com/lakeba-solutions/AirCryptoLib/issues"
   },
-  "homepage": "https://github.com/devteamlakeba/AirCryptoLib#readme",
+  "homepage": "https://github.com/lakeba-solutions/AirCryptoLib#readme",
   "devDependencies": {
     "window": "^4.2.5"
   },
