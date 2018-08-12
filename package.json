@@ -1,5 +1,5 @@
 {
-  "name": "AirCryptoLib",
+  "name": "@lakeba-solutions/aircryptolib",
   "version": "1.0.0",
   "description": "Payments in crypto for top-up",
   "main": "index.js",
