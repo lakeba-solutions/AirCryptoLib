@@ -55,12 +55,14 @@ class AirCrypto {
             return element.PrimaryCurrency === secondaryCurrency && element.SecondaryCurrency === primaryCurrency;
           }
         });
+        var result;
         // If we want to convert crypto to fiat
         if (cryptoCurrency.includes(primaryCurrency)) {
-          return amount*desiredQuote[0].Price;
+          result='{"QUOTE" : ' + amount*desiredQuote[0].Price + '}'
         } else {// If we want to convert fiat to crypto
-          return amount/desiredQuote[0].Price;
+          result='{"QUOTE" : ' + amount/desiredQuote[0].Price + '}'
         }
+        return result;
       });
   }
 

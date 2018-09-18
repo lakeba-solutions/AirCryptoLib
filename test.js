@@ -16,19 +16,19 @@ var userEmail = "user@gmail.com";
 
 aircrypto.getQuote(amount, primaryCurrency, secondaryCurrency).then(function (res) {
   let quote = JSON.parse(res);
-  console.log('QUOTE: %f %s == %d %s',amount.toFixed(2),primaryCurrency,quote.toFixed(2),secondaryCurrency);
+  console.log('QUOTE: %f %s == %d %s',amount.toFixed(2),primaryCurrency,quote.QUOTE.toFixed(2),secondaryCurrency);
 });
 
 
 // input: email, the currency in crypto (secondaryCurrency in this case), amount in AUD
-aircrypto.createPayment(userEmail, secondaryCurrency, amount).then(function (res) {
-  let payment = JSON.parse(res);
-  paymentID = payment.Data.PaymentID;
+// aircrypto.createPayment(userEmail, secondaryCurrency, amount).then(function (res) {
+//   let payment = JSON.parse(res);
+//   paymentID = payment.Data.PaymentID;
 
-  console.log('PAYMENT: status: %s, payment id: %s', payment.Status, paymentID);
+//   console.log('PAYMENT: status: %s, payment id: %s', payment.Status, paymentID);
 
-  aircrypto.paymentStatus(paymentID).then(function (res) {
-    let paymentStatus = JSON.parse(res);
-    console.log('PAYMENT STATUS: %s,  %s', payment.Status, paymentStatus.Data.Status);
-  });
-});
+//   aircrypto.paymentStatus(paymentID).then(function (res) {
+//     let paymentStatus = JSON.parse(res);
+//     console.log('PAYMENT STATUS: %s,  %s', payment.Status, paymentStatus.Data.Status);
+//   });
+// });
