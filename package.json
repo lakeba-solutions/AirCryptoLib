@@ -1,6 +1,6 @@
 {
   "name": "@lakeba-solutions/aircryptolib",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Payments in crypto for top-up",
   "main": "index.js",
   "scripts": {

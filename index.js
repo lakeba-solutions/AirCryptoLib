@@ -10,6 +10,9 @@ var header = require ('./headergen.js');
 const rn = require ('./randomno.js');
 var querystring = require('querystring');
 
+var  sta_apiurl = "https://previewapi.paidbycoins.com/v1/cli/";
+var prod_apiurl = "https://api.paidbycoins.com/v1/cli/";
+
 class AirCrypto {
 
   constructor(MID,API_KEY) {
@@ -24,11 +27,11 @@ class AirCrypto {
     var httpmethod="GET";
     var MID = this.MID; //"CFF7D059-5EFC-49B2-BD18-B937261943B5";
     var APIkey = this.API_KEY; //"b25c9ae6f91d4c9f948b67ec00113456";
-    var URI = "https://previewapi.paidbycoins.com/v1/cli/rates";
+    var URI = prod_apiurl + "rates";
     var payload='';
     var fiatCurrency = ["USD", "AUD"];
     var cryptoCurrency = ["ETH", "BTC", "LTC", "BCH"];
-
+    
     var signature = header.headergen(MID, httpmethod,URI, timestamp, nonce, payload, APIkey);
     return request({
         "uri": URI,
@@ -75,7 +78,7 @@ class AirCrypto {
     var httpmethod="POST";
     var Currency = "AUD";
     var MerchantRefNumber= "345345345";
-    var URI = "https://previewapi.paidbycoins.com/v1/cli/createpayment";
+    var URI = prod_apiurl + "createpayment";
 
     var payload = JSON.stringify({
       CryptoCurrency: cryptoType,
@@ -86,7 +89,6 @@ class AirCrypto {
         Email: userEmail
       }
     });
-
     var signature = header.headergen (MID, httpmethod,URI, timestamp, nonce, payload, APIkey);
     return request.post({
         "encoding": 'utf8',
@@ -117,7 +119,7 @@ class AirCrypto {
     var MID = this.MID; //"CFF7D059-5EFC-49B2-BD18-B937261943B5";
     var APIkey = this.API_KEY; //"b25c9ae6f91d4c9f948b67ec00113456";
     var httpmethod="GET";
-    var URI = "https://previewapi.paidbycoins.com/v1/cli/status/" + paymentID;
+    var URI = prod_apiurl + "status/" + paymentID;
 
     var payload = "";
 
